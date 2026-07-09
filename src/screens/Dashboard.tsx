@@ -5,7 +5,6 @@ import { ExamDocument } from '../components/ExamDocument';
 import { Icon } from '../components/Icon';
 import { Logo } from '../components/Logo';
 import { useI18n } from '../i18n/i18n';
-import { useTheme } from '../theme/ThemeContext';
 
 interface DashboardProps {
   onStart: () => void;
@@ -162,7 +161,6 @@ function HeroExam() {
 
 export function Dashboard({ onStart }: DashboardProps) {
   const { t } = useI18n();
-  const { theme } = useTheme();
 
   return (
     <div className="app-bg flex min-h-full flex-col">
@@ -170,9 +168,6 @@ export function Dashboard({ onStart }: DashboardProps) {
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
           <div className="flex items-center gap-3">
             <Logo />
-            <span className="hidden rounded-full border border-line bg-panel-2 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-inksoft sm:inline">
-              {theme === 'chalk' ? 'Design 01' : 'Design 02'}
-            </span>
           </div>
           <div className="flex items-center gap-3">
             <HeaderControls />

@@ -1,6 +1,4 @@
 import { useI18n, type Lang } from '../i18n/i18n';
-import { useTheme } from '../theme/ThemeContext';
-import { Icon } from './Icon';
 
 const LANGS: Lang[] = ['en', 'de'];
 
@@ -34,28 +32,10 @@ export function LanguageToggle() {
   );
 }
 
-/** Toggle between the two designs (/1 chalk · /2 editorial). */
-export function ThemeToggle() {
-  const { theme, toggleTheme } = useTheme();
-  return (
-    <button
-      type="button"
-      onClick={toggleTheme}
-      className="inline-flex items-center gap-1.5 rounded-lg border border-line bg-panel px-2.5 py-1.5 text-xs font-semibold text-inkmuted transition-colors hover:text-ink"
-      aria-label="Switch design"
-      title={theme === 'chalk' ? 'Design 1 · Chalkboard' : 'Design 2 · Editorial'}
-    >
-      <Icon name="swatch" className="h-4 w-4 text-accent-text" />
-      <span className="tabular-nums">{theme === 'chalk' ? '01' : '02'}</span>
-    </button>
-  );
-}
-
 export function HeaderControls() {
   return (
     <div className="flex items-center gap-2">
       <LanguageToggle />
-      <ThemeToggle />
     </div>
   );
 }

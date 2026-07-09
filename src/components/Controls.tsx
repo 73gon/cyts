@@ -6,17 +6,13 @@ const LANGS: Lang[] = ['en', 'de'];
 export function LanguageToggle() {
   const { lang, setLang } = useI18n();
   return (
-    <div
-      className="inline-flex items-center rounded-lg border border-line bg-panel p-0.5"
-      role="group"
-      aria-label="Language"
-    >
+    <div className='inline-flex items-center rounded-lg border border-line bg-panel p-0.5' role='group' aria-label='Language'>
       {LANGS.map((l) => {
         const active = lang === l;
         return (
           <button
             key={l}
-            type="button"
+            type='button'
             onClick={() => setLang(l)}
             aria-pressed={active}
             className={[
@@ -34,7 +30,7 @@ export function LanguageToggle() {
 
 export function HeaderControls() {
   return (
-    <div className="flex items-center gap-2">
+    <div className='flex items-center gap-2'>
       <LanguageToggle />
     </div>
   );
